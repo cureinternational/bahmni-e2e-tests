@@ -1,1 +1,1 @@
-# Bahmni E2E Functional automation reports
+# CURE E2E Functional automation reports
