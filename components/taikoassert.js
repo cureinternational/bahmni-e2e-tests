@@ -1,16 +1,20 @@
+'use strict';
 const assert = require('assert');
-import { getElements } from './selectors';
-import { title, text, textBox, toLeftOf, evaluate } from 'taiko';
+const getElements =require('./selectors')
+const { title, text, textBox, toLeftOf, evaluate } = require('taiko')
 
 async function assertTitle(userTitle) {
     assert.ok((await title()).includes(userTitle));
   }
-async function assertExists(table) {
+async function assertTable(table) {
     for (const element of getElements(table)) {
       assert.ok(await element.exists());
     }
   }
 
+  async function assertExists(element) {
+    assert.ok(await element.exists())
+  }
  async function assertTextToBeEmpty(table) {
     for (const element of getElements(table)) {
       assert.equal(await element.text(), '');
@@ -81,10 +85,16 @@ async function assertPageHasSetTimezone() {
     assert.equal(innerWidth, width);
     assert.equal(innerHeight, height);
   }
+
+  async function assertArray(actual,expected)
+  {
+    assert.ok(actual.includes(expected))
+  }
+
 module.exports={
   assertTitle:assertTitle,
   assertTextToBeEmpty:assertTextToBeEmpty,
-  assertExists:assertExists,
+  assertExists:assertTable,
   assertTextExists:assertTextExists,
   assertTextExistsOnTextArea:assertTextExistsOnTextArea,
   assertTextDoesNotExists:assertTextDoesNotExists,
@@ -94,6 +104,7 @@ module.exports={
   assertCookiesWithOptions:assertCookiesWithOptions,
   assertCookieWithInvalidOption:assertCookieWithInvalidOption,
   assertGeoLocation:assertGeoLocation,
-  assertWidthAndHeight:assertWidthAndHeight
-
+  assertWidthAndHeight:assertWidthAndHeight,
+  assertArray:assertArray,
+  assertExists:assertExists
 }

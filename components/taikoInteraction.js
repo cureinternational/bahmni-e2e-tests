@@ -13,80 +13,88 @@ const {
   write,
   textBox,
   toRightOf,
+  into,dropDown, highlight,attach
 } =require('taiko')
 
-async function Click(type,value,relativeLocator){
-
-switch(type){
-  case 'link':
-      clickLink(value,relativeLocator)
-      break
-  case 'text':
-      clickText(value,relativeLocator)
-      break
-  case 'button':
-      clickButton(value,relativeLocator)
-      break
-  case 'near':
-      clickNear(value,relativeLocator)
-      break
-  default:
-      await click(value)
-      console.log('Default click is used')
-    
-}
-
-async function Write(type,value,relativeLocator)
-{
-  switch(type){
-    case 'into':
-      writeInto(value,relativeLocator)
-      break
-    default:
-      await write(value)
-      console.log("Default write is used")
-
+async function Click(element, type, relativeLocator) {
+  try{
+  const selector = getSelector(element, type);
+  await selector.exists();
+  if (typeof relativeLocator === 'undefined') {
+    await highlight(selector);
+    await click(selector,{ waitForNavigation: true, navigationTimeout: process.env.actionTimeout });
+  } else {
+    await highlight(selector);
+    await click(selector, relativeLocator,{ waitForNavigation: true, navigationTimeout: process.env.actionTimeout });
   }
 }
-
-async function writeInto(value,relativeLocator)
-{
-  if(relativeLocator)
-  await write(value)
-  else
-  await write(value,into(textBox(relativeLocator)))
+catch(e){
+  console.log(e);
 }
-}
-async function clickLink(value,relativeLocator)
-{
-  if(relativeLocator)
-  await click(link(value))
-  else
-  await click(link(value),relativeLocator)
 }
 
-async function clickText(value,relativeLocator)
-{
-  if(relativeLocator)
-  await click(text(value))
-  else
-  await click(text(value),relativeLocator)
+async function EvaluateClick(element) {
+  try{
+    await scrollTo(element);
+    await highlight(element);
+    await evaluate(element, (el) => el.click())
+}
+catch(e){
+  console.log(e);
+}
 }
 
-async function clickButton(value,relativeLocator)
-{
-  if(relativeLocator)
-  await click(button(value))
-  else
-  await click(button(value),relativeLocator)
+async function Write(value,type,element,relativeLocator) {
+
+  try{
+  const selector = getSelector(element, type);
+  if (typeof relativeLocator === 'undefined') {
+    await selector.exists();
+    await write(value,selector);
+  } else {
+    await relativeLocator.exists();
+    await write(value,relativeLocator);
+  }
+}
+catch(e){
+  console.log(e);
+}
 }
 
-async function clickNear(value,relativeLocator)
+async function Dropdown(dropdown,value)
 {
-  if(relativeLocator)
-  await click(near(value))
-  else
-  await click(near(value),relativeLocator)
+  try{
+  await dropDown(dropdown).select(value);
+  }
+  catch(e){
+  } 
+}
+
+async function Attach(filePath,element){
+  await attach(path.join(filePath), to($(element)), { force: true });
+}
+
+function getSelector(element, type) {
+  switch (type) {
+    case 'link':
+      return link(element);
+    case 'text':
+      return text(element);
+    case 'button':
+      return button(element);
+    case 'near':
+      return near(element);
+    case 'toRightOf':
+      return toRightOf(element);
+    case 'toLeftOf':
+      return toLeftOf(element);
+    case 'below':
+      return below(element);
+    case 'into':
+      return into(textBox(element));
+    default:
+      return into($(element));
+  }
 }
 
 async function clickRight(element) {
@@ -132,6 +140,10 @@ async function pressAndReleaseElement(X, Y) {
 
 module.exports={
     Click:Click,
+    Write:Write,
+    Attach:Attach,
+    EvaluateClick:EvaluateClick,
+    Dropdown:Dropdown,
     rightClick:clickRight,
     doubleClick:clickDouble,
     pressAndReleaseElement1:pressAndReleaseElement1,
