@@ -25,7 +25,10 @@ async function waitToPresent(element)
 {
     await waitFor(async () => (await element.exists()))
 }
-
+async function waitNotToPresent(element)
+{
+    await waitFor(async () => !(await element.exists()))
+}
 async function elementDisabled(element,type)
 {
     var selector=taikoInteraction.getSelector(element,type)
@@ -34,5 +37,6 @@ async function elementDisabled(element,type)
 module.exports = {
     isPresent: isPresent,
     waitToPresent: waitToPresent,
+    waitNotToPresent:waitNotToPresent,
     elementDisabled: elementDisabled
 }

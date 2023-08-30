@@ -13,7 +13,8 @@ const {
   write,
   textBox,
   toRightOf,
-  into,dropDown, highlight,attach
+  toLeftOf,
+  into,dropDown, highlight,attach,timeField,evaluate,scrollTo,clear
 } =require('taiko')
 
 async function Click(element, type, relativeLocator) {
@@ -22,10 +23,10 @@ async function Click(element, type, relativeLocator) {
   await selector.exists();
   if (typeof relativeLocator === 'undefined') {
     await highlight(selector);
-    await click(selector,{ waitForNavigation: true, navigationTimeout: process.env.actionTimeout });
+    await click(selector,{ waitForNavigation: true, navigationTimeout: process.env.actionTimeout,waitForEvents: ['networkIdle'] });
   } else {
     await highlight(selector);
-    await click(selector, relativeLocator,{ waitForNavigation: true, navigationTimeout: process.env.actionTimeout });
+    await click(selector, relativeLocator,{ waitForNavigation: true, navigationTimeout: process.env.actionTimeout,waitForEvents: ['networkIdle'] });
   }
 }
 catch(e){
@@ -60,11 +61,42 @@ catch(e){
   console.log(e);
 }
 }
-
+async function Clear(element,type,relativeLocator)
+{
+  try{
+  const selector = getSelector(element, type);
+  if (typeof relativeLocator === 'undefined') {
+    await selector.exists();
+    await clear(textBox(selector));
+  } else {
+    await selector.exists();
+    await clear(textBox(selector));
+  }
+}
+catch(e){
+  console.log(e);
+}
+}
 async function Dropdown(dropdown,value)
 {
   try{
+  await highlight(dropdown);
   await dropDown(dropdown).select(value);
+  }
+  catch(e){
+  } 
+}
+async function pressEnter(){
+  try{
+  await press('Enter',{ waitForNavigation: true, navigationTimeout: process.env.actionTimeout })}
+  catch(e){
+  } 
+}
+async function Timefield(element,value)
+{
+  try{
+  await highlight(element);
+  await timeField(element).select(value);
   }
   catch(e){
   } 
@@ -92,6 +124,12 @@ function getSelector(element, type) {
       return below(element);
     case 'into':
       return into(textBox(element));
+    case 'dropdown':
+      return dropDown(element);
+    case 'checkbox':
+      return checkBox(toLeftOf(element));
+    case 'xpath':
+      return $(element);
     default:
       return into($(element));
   }
@@ -141,11 +179,14 @@ async function pressAndReleaseElement(X, Y) {
 module.exports={
     Click:Click,
     Write:Write,
+    Clear:Clear,
     Attach:Attach,
     EvaluateClick:EvaluateClick,
     Dropdown:Dropdown,
+    Timefield:Timefield,
     rightClick:clickRight,
     doubleClick:clickDouble,
+    pressEnter:pressEnter,
     pressAndReleaseElement1:pressAndReleaseElement1,
     pressAndReleaseElement2:pressAndReleaseElement2,
     pressAndReleaseElement:pressAndReleaseElement

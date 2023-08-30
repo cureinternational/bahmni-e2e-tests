@@ -17,28 +17,16 @@ const {
 const cwd = process.cwd();
 
 
- async function switchTabWithURL(title) {
+async function navigateTo(url) {
+  await goto(url);
+}
+ async function switchTab(title) {
     await switchTo(title);
   }
 
-  async function openTab(url) {
-    await openTab(url);
-  }
-
-  async function openTabWithName(tabName) {
-    await openTab({ name: tabName });
-  }
 
   async function switchToWithName(tabName) {
     await switchTo({ name: tabName });
-  }
-
-  async function closeTabWithURL(url) {
-    await closeTab(url);
-  }
-
-  async function closeTab() {
-    await closeTab();
   }
 
   async function reloadPage() {
@@ -60,9 +48,6 @@ const cwd = process.cwd();
     });
   }
 
-  async function emulateDevice(deviceModel) {
-    await emulateDevice(deviceModel);
-  }
 
   async function navigateBack() {
     await goBack();
@@ -75,19 +60,18 @@ const cwd = process.cwd();
   async function setTimeZone(arg0) {
     await emulateTimezone(arg0);
   }
-
+async function acceptAlert(text) {
+  await confirm(text, async () => await accept())
+}
   module.exports={
-    switchTabWithURL:switchTabWithURL,
-    openTab:openTab,
-    openTabWithName:openTabWithName,
+    navigateTo:navigateTo,
+    switchTab:switchTab,
+    acceptAlert:acceptAlert,
     switchToWithName:switchToWithName,
-    closeTabWithURL:closeTabWithURL,
-    closeTab:closeTab,
     reloadPage:reloadPage,
     navigateToFileWithRelativePath:navigateToFileWithRelativePath,
     overrideBrowserPermission:overrideBrowserPermission,
     setLocationWithLatAndLong:setLocationWithLatAndLong,
-    emulateDevice:emulateDevice,
     navigateBack:navigateBack,
     navigateForward:navigateForward,
     setTimeZone:setTimeZone

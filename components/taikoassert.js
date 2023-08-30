@@ -1,25 +1,16 @@
 'use strict';
 const assert = require('assert');
-const getElements =require('./selectors')
 const { title, text, textBox, toLeftOf, evaluate } = require('taiko')
 
 async function assertTitle(userTitle) {
     assert.ok((await title()).includes(userTitle));
   }
-async function assertTable(table) {
-    for (const element of getElements(table)) {
-      assert.ok(await element.exists());
-    }
-  }
+
 
   async function assertExists(element) {
     assert.ok(await element.exists())
   }
- async function assertTextToBeEmpty(table) {
-    for (const element of getElements(table)) {
-      assert.equal(await element.text(), '');
-    }
-  }
+
 
  async function assertTextExists(content) {
     assert.ok(await text(content).exists());
@@ -27,13 +18,6 @@ async function assertTable(table) {
 
  async function assertTextDoesNotExists(content) {
     assert.ok(!(await text(content).exists(0, 0)));
-  }
-
- async function assertTextExistsOnTextArea(expectedText, table) {
-    for (const element of getElements(table)) {
-      const actualText = await textBox(toLeftOf(element)).value();
-      assert.equal(actualText, expectedText.trim());
-    }
   }
 
 async function assertPageHasSetTimezone() {
@@ -86,17 +70,20 @@ async function assertPageHasSetTimezone() {
     assert.equal(innerHeight, height);
   }
 
-  async function assertArray(actual,expected)
+ function assertArray(actual,expected)
   {
     assert.ok(actual.includes(expected))
   }
 
+function assertArrayPresence(list,value)
+{
+  assert.ok(list.includes(value))
+}
+
 module.exports={
   assertTitle:assertTitle,
-  assertTextToBeEmpty:assertTextToBeEmpty,
-  assertExists:assertTable,
   assertTextExists:assertTextExists,
-  assertTextExistsOnTextArea:assertTextExistsOnTextArea,
+  assertArrayPresence:assertArrayPresence,
   assertTextDoesNotExists:assertTextDoesNotExists,
   assertPageHasSetTimezone:assertPageHasSetTimezone,
   assertUrl:assertUrl,
