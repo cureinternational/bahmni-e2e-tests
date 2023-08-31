@@ -14,19 +14,21 @@ const {
   textBox,
   toRightOf,
   toLeftOf,
-  into,dropDown, highlight,attach,timeField,evaluate,scrollTo,clear
+  into,dropDown, highlight,attach,timeField,evaluate,scrollTo,clear,checkBox, clearHighlights
 } =require('taiko')
-
+const path = require('path');
+const { get } = require('http');
 async function Click(element, type, relativeLocator) {
   try{
   const selector = getSelector(element, type);
-  await selector.exists();
-  if (typeof relativeLocator === 'undefined') {
+  await selector.exists(500,100);
+  if (relativeLocator === undefined) {
     await highlight(selector);
-    await click(selector,{ waitForNavigation: true, navigationTimeout: process.env.actionTimeout,waitForEvents: ['networkIdle'] });
+    await clearHighlights()
+    await click(selector,{ waitForNavigation: true, navigationTimeout: process.env.actionTimeout});
   } else {
     await highlight(selector);
-    await click(selector, relativeLocator,{ waitForNavigation: true, navigationTimeout: process.env.actionTimeout,waitForEvents: ['networkIdle'] });
+    await click(selector,{ waitForNavigation: true, navigationTimeout: process.env.actionTimeout}, relativeLocator);
   }
 }
 catch(e){
@@ -49,12 +51,23 @@ async function Write(value,type,element,relativeLocator) {
 
   try{
   const selector = getSelector(element, type);
-  if (typeof relativeLocator === 'undefined') {
+  if (relativeLocator === undefined) 
+  {
     await selector.exists();
     await write(value,selector);
-  } else {
+  } 
+  else 
+  {
     await relativeLocator.exists();
+    if(type=='xpath')
+    {
+      const xpathSelector=getSelector(relativeLocator, type);
+      await write(value,xpathSelector);
+    }
+    else
+    {
     await write(value,relativeLocator);
+    }
   }
 }
 catch(e){
@@ -80,10 +93,10 @@ catch(e){
 async function Dropdown(dropdown,value)
 {
   try{
-  await highlight(dropdown);
   await dropDown(dropdown).select(value);
   }
   catch(e){
+    console.log(e);
   } 
 }
 async function pressEnter(){
@@ -103,7 +116,7 @@ async function Timefield(element,value)
 }
 
 async function Attach(filePath,element){
-  await attach(path.join(filePath), to($(element)), { force: true });
+  await attach(path.join(filePath), element, { force: true });
 }
 
 function getSelector(element, type) {

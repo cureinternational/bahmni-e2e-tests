@@ -49,8 +49,7 @@ tags: cure, fail
 * Doctor prescribes medications "consultation/medications/paracetamol,consultation/medications/Morphine,consultation/medications/Diazepam,consultation/medications/Ceftriaxone"
 * Doctor prescribes radiology "consultation/orders/CTscan"
 * Doctor prescribes tests "consultation/orders/Platelets"
-* Click back button
-* Click back button
+* Click on home page
 * Verify the Radiologist name is displayed for "consultation/orders/CTscan"
 * Click back button
 * Open "Clinical" module

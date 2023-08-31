@@ -8,12 +8,16 @@ async function assertTitle(userTitle) {
 
 
   async function assertExists(element) {
-    assert.ok(await element.exists())
+    assert.ok(await element.exists(500,1000))
   }
 
+  async function assertNotExists(element) {
+    console.log(await element.exists(500,1000))
+    assert.ok(!await element.exists(500,1000))
+  }
 
  async function assertTextExists(content) {
-    assert.ok(await text(content).exists());
+    assert.ok(await text(content).exists(500,1000));
   }
 
  async function assertTextDoesNotExists(content) {
@@ -93,5 +97,6 @@ module.exports={
   assertGeoLocation:assertGeoLocation,
   assertWidthAndHeight:assertWidthAndHeight,
   assertArray:assertArray,
-  assertExists:assertExists
+  assertExists:assertExists,
+  assertNotExists:assertNotExists
 }

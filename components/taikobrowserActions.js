@@ -18,7 +18,7 @@ const cwd = process.cwd();
 
 
 async function navigateTo(url) {
-  await goto(url);
+  await goto(url,{ waitForNavigation: true});
 }
  async function switchTab(title) {
     await switchTo(title);
