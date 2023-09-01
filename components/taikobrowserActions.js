@@ -12,7 +12,7 @@ const {
     goForward,
     getCookies,
     emulateTimezone,
-    currentURL,
+    currentURL,confirm,accept
   } =require('taiko')
 const cwd = process.cwd();
 
@@ -24,13 +24,16 @@ async function navigateTo(url) {
     await switchTo(title);
   }
 
+  async function reloadTab() {
+    await reload({ waitForEvents: ['DOMContentLoaded'] })
+  }
 
   async function switchToWithName(tabName) {
     await switchTo({ name: tabName });
   }
 
   async function reloadPage() {
-    await reload();
+    await reload({ waitForEvents: ['DOMContentLoaded','targetNavigated'] })
   }
 
   async function navigateToFileWithRelativePath(filePath) {
@@ -74,6 +77,7 @@ async function acceptAlert(text) {
     setLocationWithLatAndLong:setLocationWithLatAndLong,
     navigateBack:navigateBack,
     navigateForward:navigateForward,
-    setTimeZone:setTimeZone
+    setTimeZone:setTimeZone,
+    reloadTab:reloadTab
 
   }

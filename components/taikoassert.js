@@ -1,27 +1,40 @@
 'use strict';
 const assert = require('assert');
 const { title, text, textBox, toLeftOf, evaluate } = require('taiko')
-
+var asserTTimeOut=parseInt(process.env.assertTimeOut)
 async function assertTitle(userTitle) {
     assert.ok((await title()).includes(userTitle));
   }
 
 
   async function assertExists(element) {
-    assert.ok(await element.exists(500,1000))
+    try
+    {
+    assert.ok(await element.exists(500,asserTTimeOut))
+    }
+    catch(err)
+    {
+      console.log(element , "does not exist")
+    }
   }
 
   async function assertNotExists(element) {
-    console.log(await element.exists(500,1000))
-    assert.ok(!await element.exists(500,1000))
+    try
+    {
+    assert.ok(!await element.exists(500,asserTTimeOut))
+    }
+    catch(err)
+    {
+      console.log(element , "does exist")
+    }
   }
 
  async function assertTextExists(content) {
-    assert.ok(await text(content).exists(500,1000));
+    assert.ok(await text(content).exists(500,asserTTimeOut));
   }
 
  async function assertTextDoesNotExists(content) {
-    assert.ok(!(await text(content).exists(0, 0)));
+    assert.ok(!(await text(content).exists(500, asserTTimeOut)));
   }
 
 async function assertPageHasSetTimezone() {

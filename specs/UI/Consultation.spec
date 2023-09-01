@@ -5,7 +5,7 @@ tags: clinic, consultation, regression, ui
 
 ## Doctor should be able to see the specialities tab
 
-tags: cure
+tags: cure, failtest
 
 * Login to Bahmni as a "doctor"
 * Goto Clinical application
@@ -15,7 +15,7 @@ tags: cure
 
 ## Doctor should be able to see the patient in My Patient queue and speciality tab
 
-tags: cure
+tags: cure, failtest
 
 * Login to Bahmni as a "receptionist"
 * Receptionist creates the "cure" patient and starts an OPD
@@ -33,7 +33,7 @@ tags: cure
 
 ## Doctor should be able to capture Consultation
 
-tags: cure, fail
+tags: cure, failtest
 
 * Login to Bahmni as a "receptionist"
 * Goto Clinical application
@@ -64,7 +64,7 @@ tags: cure, fail
 
 ## Doctor should be able to add Observation Form
 
-tags: forms, cure
+tags: forms, cure, failtest
 
 * Login to Bahmni as a "receptionist"
 * Goto Clinical application

@@ -7,7 +7,6 @@ tags: clinic, patient_documents, regression, ui
 tags: cure
 
 * Login to Bahmni as a "receptionist"
-* Goto Clinical application
 * Receptionist creates the "cure" patient and starts an OPD
 * Open "Patient Documents" module
 * Choose newly created patient

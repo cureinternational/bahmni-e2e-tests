@@ -1,8 +1,14 @@
 # test
 
-## test specification
+## Dev test specification
 
 tags: ui, devtest
 
+* Pre test step
 * Login to Bahmni as a "receptionist"
-* Receptionist creates the "cure" patient and starts an OPD
+* Open "Clinical" module
+* Goto All sections
+* Select the newly created patient from all section
+* Click on active patients list
+* Click on home page
+

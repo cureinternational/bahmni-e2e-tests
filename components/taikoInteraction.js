@@ -14,14 +14,18 @@ const {
   textBox,
   toRightOf,
   toLeftOf,
-  into,dropDown, highlight,attach,timeField,evaluate,scrollTo,clear,checkBox, clearHighlights
+  into,dropDown, highlight,attach,timeField,evaluate,scrollTo,clear,checkBox, clearHighlights,press
 } =require('taiko')
 const path = require('path');
 const { get } = require('http');
+const taikoElement = require('./taikoElement');
+
+
+
 async function Click(element, type, relativeLocator) {
   try{
   const selector = getSelector(element, type);
-  await selector.exists(500,100);
+  await taikoElement.isPresent(selector)
   if (relativeLocator === undefined) {
     await highlight(selector);
     await clearHighlights()
@@ -31,8 +35,9 @@ async function Click(element, type, relativeLocator) {
     await click(selector,{ waitForNavigation: true, navigationTimeout: process.env.actionTimeout}, relativeLocator);
   }
 }
-catch(e){
-  console.log(e);
+catch(e)
+{
+  console.error(element+' of type '+type+' is not clickable');
 }
 }
 
@@ -40,10 +45,12 @@ async function EvaluateClick(element) {
   try{
     await scrollTo(element);
     await highlight(element);
+    await clearHighlights()
     await evaluate(element, (el) => el.click())
 }
-catch(e){
-  console.log(e);
+catch(e)
+{
+  console.error(element+' is not getting evaluated');
 }
 }
 
@@ -53,15 +60,15 @@ async function Write(value,type,element,relativeLocator) {
   const selector = getSelector(element, type);
   if (relativeLocator === undefined) 
   {
-    await selector.exists();
+    await taikoElement.isPresent(selector)
     await write(value,selector);
   } 
   else 
   {
-    await relativeLocator.exists();
     if(type=='xpath')
     {
       const xpathSelector=getSelector(relativeLocator, type);
+      await taikoElement.isPresent(xpathSelector)
       await write(value,xpathSelector);
     }
     else
@@ -71,23 +78,22 @@ async function Write(value,type,element,relativeLocator) {
   }
 }
 catch(e){
-  console.log(e);
+  console.error(element+' of type '+type+' is not writable');
 }
 }
 async function Clear(element,type,relativeLocator)
 {
   try{
   const selector = getSelector(element, type);
+  await taikoElement.isPresent(selector)
   if (typeof relativeLocator === 'undefined') {
-    await selector.exists();
     await clear(textBox(selector));
   } else {
-    await selector.exists();
     await clear(textBox(selector));
   }
 }
 catch(e){
-  console.log(e);
+  console.error(element+' of type '+type+' is not clearable');
 }
 }
 async function Dropdown(dropdown,value)
@@ -96,22 +102,23 @@ async function Dropdown(dropdown,value)
   await dropDown(dropdown).select(value);
   }
   catch(e){
-    console.log(e);
+    console.error(dropdown+' of dropdown '+value+' is not selectable');
   } 
 }
 async function pressEnter(){
   try{
   await press('Enter',{ waitForNavigation: true, navigationTimeout: process.env.actionTimeout })}
   catch(e){
+    console.error('Enter is not pressed');
   } 
 }
 async function Timefield(element,value)
 {
   try{
-  await highlight(element);
   await timeField(element).select(value);
   }
   catch(e){
+    console.error(element+' of timefield '+value+' is not selectable');
   } 
 }
 
@@ -202,6 +209,7 @@ module.exports={
     pressEnter:pressEnter,
     pressAndReleaseElement1:pressAndReleaseElement1,
     pressAndReleaseElement2:pressAndReleaseElement2,
-    pressAndReleaseElement:pressAndReleaseElement
+    pressAndReleaseElement:pressAndReleaseElement,
+    getSelector:getSelector
 
 }
