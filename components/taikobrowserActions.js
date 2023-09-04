@@ -12,7 +12,7 @@ const {
     goForward,
     getCookies,
     emulateTimezone,
-    currentURL,confirm,accept
+    currentURL,alert,accept,confirm
   } =require('taiko')
 const cwd = process.cwd();
 
@@ -64,7 +64,7 @@ async function navigateTo(url) {
     await emulateTimezone(arg0);
   }
 async function acceptAlert(text) {
-  await confirm(text, async () => await accept())
+   confirm(text, async () => await accept())
 }
   module.exports={
     navigateTo:navigateTo,

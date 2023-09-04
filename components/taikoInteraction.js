@@ -14,13 +14,11 @@ const {
   textBox,
   toRightOf,
   toLeftOf,
-  into,dropDown, highlight,attach,timeField,evaluate,scrollTo,clear,checkBox, clearHighlights,press
+  into,dropDown, highlight,attach,timeField,evaluate,scrollTo,clear,checkBox, clearHighlights,press,confirm,accept, above
 } =require('taiko')
 const path = require('path');
 const { get } = require('http');
 const taikoElement = require('./taikoElement');
-
-
 
 async function Click(element, type, relativeLocator) {
   try{
@@ -29,10 +27,10 @@ async function Click(element, type, relativeLocator) {
   if (relativeLocator === undefined) {
     await highlight(selector);
     await clearHighlights()
-    await click(selector,{ waitForNavigation: true, navigationTimeout: process.env.actionTimeout});
+    await click(selector,{navigationTimeout: process.env.actionTimeout,force:true});
   } else {
     await highlight(selector);
-    await click(selector,{ waitForNavigation: true, navigationTimeout: process.env.actionTimeout}, relativeLocator);
+    await click(selector,{navigationTimeout: process.env.actionTimeout,force:true}, relativeLocator);
   }
 }
 catch(e)
@@ -41,11 +39,20 @@ catch(e)
 }
 }
 
+async function AlertClick(element, type,text) {
+  try{
+  const selector = getSelector(element, type);
+  await taikoElement.isPresent(selector)
+    confirm(text, async () => await accept())
+    await click(selector,{navigationTimeout: process.env.actionTimeout,force:true});
+}
+catch(e)
+{
+  console.error(element+' of type '+type+' is not clickable');
+}
+}
 async function EvaluateClick(element) {
   try{
-    await scrollTo(element);
-    await highlight(element);
-    await clearHighlights()
     await evaluate(element, (el) => el.click())
 }
 catch(e)
@@ -87,9 +94,9 @@ async function Clear(element,type,relativeLocator)
   const selector = getSelector(element, type);
   await taikoElement.isPresent(selector)
   if (typeof relativeLocator === 'undefined') {
-    await clear(textBox(selector));
+    await clear(selector);
   } else {
-    await clear(textBox(selector));
+    await clear(selector);
   }
 }
 catch(e){
@@ -198,6 +205,7 @@ async function pressAndReleaseElement(X, Y) {
 
 module.exports={
     Click:Click,
+    AlertClick,AlertClick,
     Write:Write,
     Clear:Clear,
     Attach:Attach,

@@ -12,6 +12,7 @@ tags: cure
 * Choose newly created patient
 * Add a report "labReport1" to "Consent Form"
 * Save the report
+* Click on home page
 * Logout and Login to Bahmni as a "doctor"
 * Verify Patient Documents in patient dashboard
 * Click on active patients list
