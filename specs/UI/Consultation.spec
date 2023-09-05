@@ -46,15 +46,17 @@ tags: cure
 * Doctor prescribes medications "consultation/medications/paracetamol,consultation/medications/Morphine,consultation/medications/Diazepam,consultation/medications/Ceftriaxone"
 * Doctor prescribes radiology "consultation/orders/CTscan"
 * Doctor prescribes tests "consultation/orders/Platelets"
+* Click on active patients list
 * Click on home page
 * Verify the Radiologist name is displayed for "consultation/orders/CTscan"
-* Click back button
 * Open "Clinical" module
 * Goto All sections and search the newly created patient
 * Verify medical prescription in patient clinical dashboard
 * Verify diagnosis and condition in patient clinical dashboard
 * Validate the lab tests are available in patient clinical dashboard
 * Verify history & examination in patient clinical dashboard
+* Click on active patients list
+* Click on home page
 * Logout and Login to Bahmni as a "receptionist"
 * visit is closed at the front desk
 * Log out if still logged in
