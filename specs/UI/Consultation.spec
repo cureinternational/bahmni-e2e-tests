@@ -81,8 +81,10 @@ tags: forms, cure
 * Validate obs "consultation/observations/OrthopaedicHistoryPhysical" on the patient clinical dashboard
 * Validate obs "consultation/observations/physicalTherapy" on the patient clinical dashboard
 * Validate obs "consultation/observations/pediatricsForm" on the patient clinical dashboard
-* Validate obs "consultation/observations/preAnaesthesiaAssessment" on the patient clinical dashboard
-* Validate obs "consultation/observations/patientProgressNotesOrders" on the patient clinical dashboard
+* Validate new obs "consultation/observations/preAnaesthesiaAssessment" on the patient clinical dashboard
+* Validate new obs "consultation/observations/patientProgressNotesOrders" on the patient clinical dashboard
+* Click on active patients list
+* Click on home page
 * Logout and Login to Bahmni as a "receptionist"
 * visit is closed at the front desk
 * Log out if still logged in
