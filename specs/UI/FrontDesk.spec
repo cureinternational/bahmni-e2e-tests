@@ -1,6 +1,6 @@
 # FrontDesk
 
-tags: ui
+tags: ui, frontdesk
 
 ## A receptionist view the registration location, specialties and providers list in login,appointments and visits
 
@@ -27,7 +27,7 @@ tags: regression, cure
 
 ## A receptionist admits a patient and do search the patient in the inPatient module
 
-tags: regression, cure
+tags: regression
 
 * Login to Bahmni as a "nurse"
 * Receptionist creates the "cure" patient and starts an OPD
@@ -41,7 +41,7 @@ tags: regression, cure
 
 ## A receptionist starts an opd visit and views the ipd dashboard
 
-tags: regression, cure, failtest
+tags: regression, cure
 
 * Login to Bahmni as a "receptionist"
 * Receptionist creates the "pre" patient

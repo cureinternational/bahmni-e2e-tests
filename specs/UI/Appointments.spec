@@ -1,6 +1,6 @@
 # Appointments
 
-tags: ui
+tags: ui, appointment
 
 ## A receptionist should be able to create and cancel regular appointment for a patient
 

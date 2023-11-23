@@ -1,6 +1,6 @@
 # Consultation
 
-tags: clinic, consultation, regression, ui
+tags: ui, consultation
 
 
 ## Doctor should be able to see the specialities tab
@@ -62,7 +62,7 @@ tags: cure
 * visit is closed at the front desk
 * Log out if still logged in
 
-## Doctor should be able to add Observation Form
+## Doctor should be able to add Observation Form 1
 
 tags: forms, cure, devtest
 
@@ -72,25 +72,59 @@ tags: forms, cure, devtest
 * Open "Clinical" module
 * Goto All sections and search the newly created patient
 * Doctor clicks consultation
-//* Enter Form Values and validate no error is displayed on save "consultation/observations/preAnaesthesiaAssessment"
-//* Enter Form Values and validate no error is displayed on save "consultation/observations/paediatricAssessment"
-//* Enter Form Values and validate no error is displayed on save "consultation/observations/patientProgressNotesOrders"
-//* Enter Form Values and validate no error is displayed on save "consultation/observations/vitals"
-//* Enter Form Values and validate no error is displayed on save "consultation/observations/rehabReferral"
-//* Enter Form Values and validate no error is displayed on save "consultation/observations/rehabAssessment"
-//* Enter Form Values and validate no error is displayed on save "consultation/observations/admissionOrder"
-* Enter Form Values and validate no error is displayed on save "consultation/observations/orthopaedicOperativeReport"
-//* Enter Form Values and validate no error is displayed on save "consultation/observations/nursingPatientProgress"
+* Enter Form Values and validate no error is displayed on save "consultation/observations/preAnaesthesiaAssessment"
+* Enter Form Values and validate no error is displayed on save "consultation/observations/paediatricAssessment"
+* Enter Form Values and validate no error is displayed on save "consultation/observations/patientProgressNotesOrders"
 * Goto patient clinical dashboard
-//* Validate new obs "consultation/observations/preAnaesthesiaAssessment" on the patient clinical dashboard
-//* Validate new obs "consultation/observations/patientProgressNotesOrders" on the patient clinical dashboard
-//* Validate new obs "consultation/observations/vitals" on the patient clinical dashboard
-//* Validate new obs "consultation/observations/admissionOrder" on the patient clinical dashboard
-//* Validate new obs "consultation/observations/paediatricAssessment" on the patient clinical dashboard
-//* Validate new obs "consultation/observations/rehabReferral" on the patient clinical dashboard
-//* Validate new obs "consultation/observations/rehabAssessment" on the patient clinical dashboard
+* Validate new obs "consultation/observations/preAnaesthesiaAssessment" on the patient clinical dashboard
+* Validate new obs "consultation/observations/paediatricAssessment" on the patient clinical dashboard
+* Validate new obs "consultation/observations/patientProgressNotesOrders" on the patient clinical dashboard
+* Click on active patients list
+* Click on home page
+* Logout and Login to Bahmni as a "receptionist"
+* visit is closed at the front desk
+* Log out if still logged in
+
+## Doctor should be able to add Observation Form 2
+
+tags: forms, cure, devtest
+
+* Login to Bahmni as a "receptionist"
+* Receptionist creates the "cure" patient and starts an OPD
+* Logout and Login to Bahmni as a "doctor"
+* Open "Clinical" module
+* Goto All sections and search the newly created patient
+* Doctor clicks consultation
+* Enter Form Values and validate no error is displayed on save "consultation/observations/vitals"
+* Enter Form Values and validate no error is displayed on save "consultation/observations/rehabReferral"
+* Enter Form Values and validate no error is displayed on save "consultation/observations/rehabAssessment"
+* Goto patient clinical dashboard
+* Validate new obs "consultation/observations/vitals" on the patient clinical dashboard
+* Validate new obs "consultation/observations/rehabReferral" on the patient clinical dashboard
+* Validate new obs "consultation/observations/rehabAssessment" on the patient clinical dashboard
+* Click on active patients list
+* Click on home page
+* Logout and Login to Bahmni as a "receptionist"
+* visit is closed at the front desk
+* Log out if still logged in
+
+## Doctor should be able to add Observation Form 3
+
+tags: forms, cure, devtest
+
+* Login to Bahmni as a "receptionist"
+* Receptionist creates the "cure" patient and starts an OPD
+* Logout and Login to Bahmni as a "doctor"
+* Open "Clinical" module
+* Goto All sections and search the newly created patient
+* Doctor clicks consultation
+* Enter Form Values and validate no error is displayed on save "consultation/observations/admissionOrder"
+* Enter Form Values and validate no error is displayed on save "consultation/observations/orthopaedicOperativeReport"
+* Enter Form Values and validate no error is displayed on save "consultation/observations/nursingPatientProgress"
+* Goto patient clinical dashboard
+* Validate new obs "consultation/observations/admissionOrder" on the patient clinical dashboard
 * Validate new obs "consultation/observations/orthopaedicOperativeReport" on the patient clinical dashboard
-//* Validate new obs "consultation/observations/nursingPatientProgress" on the patient clinical dashboard
+* Validate new obs "consultation/observations/nursingPatientProgress" on the patient clinical dashboard
 * Click on active patients list
 * Click on home page
 * Logout and Login to Bahmni as a "receptionist"
