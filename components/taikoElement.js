@@ -2,13 +2,14 @@
 const {waitFor} =require('taiko');
 const taikoInteraction = require('./taikoInteraction');
 const asserTTimeOut=parseInt(process.env.asserTTimeOut)
+const actionTimeout=parseInt(process.env.actionTimeout)
 const logHelper = require('../bahmni-e2e-common-flows/tests/util/logHelper');
 
 async function isPresent(element)
 {
     var check=false
     try{
-        check= await element.isVisible(500,asserTTimeOut)
+        check= await element.isVisible(1000,asserTTimeOut)
     }
     catch(e){
         logHelper.info(element ,' is not present');
@@ -20,7 +21,7 @@ async function isNotPresent(element)
 {
     var check=false
     try{
-    check= !(await element.isVisible(500,asserTTimeOut))
+    check= !(await element.isVisible(1000,asserTTimeOut))
     }
     catch(e){
         logHelper.info(element ,' is still present');
@@ -30,7 +31,7 @@ async function isNotPresent(element)
 async function isExists(element)
 {
     var check=false;
-    check= await element.exists(500,asserTTimeOut)
+    check= await element.exists(1000,asserTTimeOut)
     if(!check)
         logHelper.info(element ,' is not exists');
     return check;
@@ -39,7 +40,7 @@ async function isExists(element)
 async function isNotExists(element)
 {
     var check=false;
-        check= !await element.exists(500,asserTTimeOut)
+        check= !await element.exists(1000,asserTTimeOut)
      if(!check) 
         logHelper.info(element ,' is exists');
     return check;
@@ -47,16 +48,21 @@ async function isNotExists(element)
 async function waitToExists(element)
 {
     try{
-        await waitFor(async () => (await element.exists(500,asserTTimeOut)))
+        var isFound = true;
+        await waitFor(async () => (
+            isFound=await element.exists(1000,actionTimeout)))
+        if(!isFound)
+            logHelper.error(element ,' still not Exists');
         }
-        catch(e){
-            logHelper.info(element ,' still not Exists');
+        catch(e)
+        {
+            logHelper.info("got exception in wait to exists");
         }
 }
 async function waitNotToExists(element)
 {
     try{
-    await waitFor(async () => !(await element.exists(500,asserTTimeOut)))
+    await waitFor(async () => !(await element.exists(1000,actionTimeout)))
     }
     catch(e)
     {
@@ -68,7 +74,7 @@ async function waitToPresent(element)
     try{
     var isFound = true;
     do {
-        isFound = await element.isVisible(500, asserTTimeOut)
+        isFound = await element.isVisible(1000, actionTimeout)
     } while (!isFound)
     }
     catch(e){
@@ -80,7 +86,7 @@ async function waitNotToPresent(element)
     try{
         var isFound = true;
         do {
-            isFound = await element.isVisible(500, asserTTimeOut)
+            isFound = await element.isVisible(1000, actionTimeout)
         } while (!isFound)
         }
         catch(e){
@@ -92,7 +98,7 @@ async function elementDisabled(element)
     var check=false;
     try
     {
-    check= await element.isDisabled(500,asserTTimeOut)
+    check= await element.isDisabled(1000,actionTimeout)
     }
     catch(e)
     {
@@ -106,7 +112,7 @@ async function elementEnabled(element)
     var check=false;
     try
     {
-    check= !(await element.isDisabled(500,asserTTimeOut))
+    check= !(await element.isDisabled(1000,actionTimeout))
     }
     catch(e)
     {

@@ -167,6 +167,8 @@ function getSelector(element, type) {
       return dropDown(element);
     case 'checkbox':
       return checkBox(toLeftOf(element));
+    case 'textbox':
+      return textBox(element);
     case 'xpath':
       return $(element);
     default:

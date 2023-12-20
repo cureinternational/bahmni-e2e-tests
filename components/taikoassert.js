@@ -1,6 +1,6 @@
 'use strict';
 const assert = require('assert');
-const { title, text, textBox, toLeftOf, evaluate } = require('taiko')
+const { title, text, textBox, toLeftOf, evaluate, waitFor } = require('taiko')
 const logHelper = require('../bahmni-e2e-common-flows/tests/util/logHelper');
 var asserTTimeOut=parseInt(process.env.assertTimeOut)
 async function assertTitle(userTitle) {
@@ -9,7 +9,8 @@ async function assertTitle(userTitle) {
 
 
   async function assertExists(element) {
-    var check=await element.exists(500,asserTTimeOut)
+    waitFor(1000)
+    var check=await element.exists(1000,asserTTimeOut)
     if(!check)
     {
       logHelper.error(element,' is not exists');
@@ -18,7 +19,7 @@ async function assertTitle(userTitle) {
   }
 
   async function assertNotExists(element) {
-    var check=await element.exists(500,asserTTimeOut)
+    var check=await element.exists(1000,asserTTimeOut)
     if(check)
     {
       logHelper.error(element,' is exists');
@@ -27,11 +28,11 @@ async function assertTitle(userTitle) {
   }
 
  async function assertTextExists(content) {
-    assert.ok(await text(content).exists(500,asserTTimeOut));
+    assert.ok(await text(content).exists(1000,asserTTimeOut));
   }
 
  async function assertTextDoesNotExists(content) {
-    assert.ok(!(await text(content).exists(500, asserTTimeOut)));
+    assert.ok(!(await text(content).exists(1000, asserTTimeOut)));
   }
 
 async function assertPageHasSetTimezone() {

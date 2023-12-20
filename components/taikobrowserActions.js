@@ -33,7 +33,7 @@ async function navigateTo(url) {
   }
 
   async function reloadPage() {
-    await reload({ waitForEvents: ['DOMContentLoaded','targetNavigated'] })
+    await reload()
   }
 
   async function navigateToFileWithRelativePath(filePath) {

@@ -64,7 +64,7 @@ tags: cure
 
 ## Doctor should be able to add Observation Form 1
 
-tags: forms, cure, devtest
+tags: forms, cure, form
 
 * Login to Bahmni as a "receptionist"
 * Receptionist creates the "cure" patient and starts an OPD
@@ -77,8 +77,11 @@ tags: forms, cure, devtest
 * Enter Form Values and validate no error is displayed on save "consultation/observations/patientProgressNotesOrders"
 * Goto patient clinical dashboard
 * Validate new obs "consultation/observations/preAnaesthesiaAssessment" on the patient clinical dashboard
+* Edit new obs "consultation/observations/preAnaesthesiaAssessment" on the patient clinical dashboard
 * Validate new obs "consultation/observations/paediatricAssessment" on the patient clinical dashboard
+* Edit new obs "consultation/observations/paediatricAssessment" on the patient clinical dashboard
 * Validate new obs "consultation/observations/patientProgressNotesOrders" on the patient clinical dashboard
+* Edit new obs "consultation/observations/patientProgressNotesOrders" on the patient clinical dashboard
 * Click on active patients list
 * Click on home page
 * Logout and Login to Bahmni as a "receptionist"
@@ -87,7 +90,7 @@ tags: forms, cure, devtest
 
 ## Doctor should be able to add Observation Form 2
 
-tags: forms, cure, devtest
+tags: forms, cure, form
 
 * Login to Bahmni as a "receptionist"
 * Receptionist creates the "cure" patient and starts an OPD
@@ -100,8 +103,11 @@ tags: forms, cure, devtest
 * Enter Form Values and validate no error is displayed on save "consultation/observations/rehabAssessment"
 * Goto patient clinical dashboard
 * Validate new obs "consultation/observations/vitals" on the patient clinical dashboard
+* Edit new obs "consultation/observations/vitals" on the patient clinical dashboard
 * Validate new obs "consultation/observations/rehabReferral" on the patient clinical dashboard
+* Edit new obs "consultation/observations/rehabReferral" on the patient clinical dashboard
 * Validate new obs "consultation/observations/rehabAssessment" on the patient clinical dashboard
+* Edit new obs "consultation/observations/rehabAssessment" on the patient clinical dashboard
 * Click on active patients list
 * Click on home page
 * Logout and Login to Bahmni as a "receptionist"
@@ -110,7 +116,7 @@ tags: forms, cure, devtest
 
 ## Doctor should be able to add Observation Form 3
 
-tags: forms, cure, devtest
+tags: forms, cure, form
 
 * Login to Bahmni as a "receptionist"
 * Receptionist creates the "cure" patient and starts an OPD
@@ -123,8 +129,11 @@ tags: forms, cure, devtest
 * Enter Form Values and validate no error is displayed on save "consultation/observations/nursingPatientProgress"
 * Goto patient clinical dashboard
 * Validate new obs "consultation/observations/admissionOrder" on the patient clinical dashboard
+* Edit new obs "consultation/observations/admissionOrder" on the patient clinical dashboard
 * Validate new obs "consultation/observations/orthopaedicOperativeReport" on the patient clinical dashboard
+* Edit new obs "consultation/observations/orthopaedicOperativeReport" on the patient clinical dashboard
 * Validate new obs "consultation/observations/nursingPatientProgress" on the patient clinical dashboard
+* Edit new obs "consultation/observations/nursingPatientProgress" on the patient clinical dashboard
 * Click on active patients list
 * Click on home page
 * Logout and Login to Bahmni as a "receptionist"
