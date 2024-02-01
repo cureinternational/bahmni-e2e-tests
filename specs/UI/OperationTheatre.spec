@@ -4,9 +4,9 @@ tags: hospital, regression, ui
 
 ## Verify the calendar and add notes
 
-tags: OT, cure
+tags: OT, cure, devtest
 
-* Login to Bahmni location "CURE Ethiopia" as a "receptionist"
+* Login to Bahmni location "CURE Ethiopia" as a "doctor"
 * Open "Operation Theatre" module
 * Verify the presence of calendar
 * Add note verify the note
