@@ -30,8 +30,10 @@ async function Click(element, type, relativeLocator) {
   const selector = getSelector(element, type);
   await taikoElement.waitToExists(selector)
   if (relativeLocator === undefined) {
+    await scrollTo(selector)
     await click(selector,{navigationTimeout: process.env.actionTimeout,force:true,waitForNavigation:false});
   } else {
+    await scrollTo(selector)
     await click(selector,{navigationTimeout: process.env.actionTimeout,force:true,waitForNavigation:false}, relativeLocator);
   }
   await taikoAssert.assertNotExists($(errorElement))
