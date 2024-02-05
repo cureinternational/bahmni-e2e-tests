@@ -14,6 +14,7 @@ async function assertTitle(userTitle) {
     if(!check)
     {
       logHelper.error(element,' is not exists');
+      console.log(element+' is not exists')
       assert.fail(element+' is not exists')
     }
   }
@@ -23,6 +24,7 @@ async function assertTitle(userTitle) {
     if(check)
     {
       logHelper.error(element,' is exists');
+      console.log(element+' is exists')
       assert.fail(element+' is  exists')
     }
   }

@@ -9,7 +9,8 @@ tags: OT, cure
 * Login to Bahmni location "CURE Ethiopia" as a "doctor"
 * Open "Operation Theatre" module
 * Verify the presence of calendar
-* Add note verify the note
+* Add OT note
+* Verify the OT note
 * Delete the note
 
 ## Create an OT location if it doesn't exisit
