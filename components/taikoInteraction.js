@@ -24,7 +24,6 @@ const taikoHelper = require('../bahmni-e2e-common-flows/tests/util/taikoHelper')
 const gaugeHelper=require('../bahmni-e2e-common-flows/tests/util/gaugeHelper');
 const logHelper = require('../bahmni-e2e-common-flows/tests/util/logHelper');
 var errorElement='//DIV[@class="message-container error-message-container"]'
-var clickTimeOut=parseInt(process.env.clickTimeOut)
 
 async function Click(element, type, relativeLocator) {
   const selector = getSelector(element, type);
