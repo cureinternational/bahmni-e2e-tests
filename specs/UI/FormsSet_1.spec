@@ -38,12 +38,12 @@ tags: forms, cure, form
 * Open "Clinical" module
 * Goto All sections and search the newly created patient
 * Doctor clicks consultation
-* Enter Form Values and validate no error is displayed on save "consultation/observations/vitals"
+* Enter Form Values and validate no error is displayed on save "consultation/observations/Vitals"
 * Enter Form Values and validate no error is displayed on save "consultation/observations/rehabReferral"
 * Enter Form Values and validate no error is displayed on save "consultation/observations/rehabAssessment"
 * Goto patient clinical dashboard
-* Validate new obs "consultation/observations/vitals" on the patient clinical dashboard
-* Edit new obs "consultation/observations/vitals" on the patient clinical dashboard
+* Validate new obs "consultation/observations/Vitals" on the patient clinical dashboard
+* Edit new obs "consultation/observations/Vitals" on the patient clinical dashboard
 * Validate new obs "consultation/observations/rehabReferral" on the patient clinical dashboard
 * Edit new obs "consultation/observations/rehabReferral" on the patient clinical dashboard
 * Validate new obs "consultation/observations/rehabAssessment" on the patient clinical dashboard
