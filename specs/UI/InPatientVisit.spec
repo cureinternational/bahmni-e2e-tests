@@ -7,7 +7,7 @@ tags: ui
 tags: hospital, ipmodule, regression
 
 * Login to Bahmni location "General Ward" as a "receptionist"
-* Receptionist creates a patient and starts an IPD visit
+* Receptionist creates the "cure" patient and starts an IPD
 * Logout and Login to Bahmni location "General Ward" as a "doctor"
 * Doctor issues an Admit disposition
 * Click on home page
@@ -37,7 +37,7 @@ tags: hospital, ipmodule, regression
 tags: hospital, bedmanagement, regression
 
 * Login to Bahmni location "General Ward" as a "receptionist"
-* Receptionist creates a patient and starts an IPD visit
+* Receptionist creates the "cure" patient and starts an IPD
 * Logout and Login to Bahmni location "General Ward" as a "doctor"
 * Doctor issues an Admit disposition
 * Click on home page

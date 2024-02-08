@@ -27,10 +27,10 @@ tags: regression, cure
 
 ## A receptionist admits a patient and do search the patient in the inPatient module
 
-tags: cure, regression
+tags: cure, regression, devtest
 
 * Login to Bahmni as a "nurse"
-* Receptionist creates the "cure" patient and starts an OPD
+* Receptionist creates the "cure" patient and starts an IPD
 * Open "Clinical" app
 * Search and select patient
 * Admit the patient in "General Ward"
