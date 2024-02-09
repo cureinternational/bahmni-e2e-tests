@@ -62,10 +62,6 @@ tags: cure
 * visit is closed at the front desk
 * Log out if still logged in
 
-
-
-
-
 ## Doctor should be able to add Observation Form 5
 
 tags: forms, cure, form
@@ -114,7 +110,7 @@ tags: forms, cure, form
 
 ## Doctor should be able to add Observation Form 7
 
-tags: forms, cure, form, devtest
+tags: forms, cure, form
 
 * Login to Bahmni as a "receptionist"
 * Receptionist creates the "cure" patient and starts an OPD
