@@ -4,7 +4,7 @@ tags: ui, consultation
 
 ## Doctor should be able to add Observation Form 3
 
-tags: forms, cure, form
+tags: forms, cure, form, devtest
 
 * Login to Bahmni as a "receptionist"
 * Receptionist creates the "cure" patient and starts an OPD
