@@ -12,6 +12,8 @@ tags: OT, cure
 * Add OT note
 * Verify the OT note
 * Delete the note
+* Click on OT list view
+* Verify the column "Primary Diagnoses"
 
 ## Create an OT location if it doesn't exisit
 
