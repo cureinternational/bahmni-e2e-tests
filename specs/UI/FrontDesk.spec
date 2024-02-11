@@ -77,6 +77,7 @@ tags: regression, cure
 * Logout and Login to Bahmni as a "doctor"
 * Open "Clinical" module
 * Goto All sections and search the newly created patient
+* Add Nutrional values
 * Doctor clicks consultation
 * Doctor prescribes medications "consultation/medications/Diazepam"
 * Goto patient dashboard

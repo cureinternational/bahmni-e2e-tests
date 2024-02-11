@@ -39,8 +39,6 @@ tags: cure
 * Open "Clinical" module
 * Goto All sections and search the newly created patient
 * Add Nutrional values
-* Open "Clinical" module
-* Goto All sections and search the newly created patient
 * Doctor clicks consultation
 * Doctor notes the diagnosis and conditions "consultation/diagnosis/diagnosis_condition"
 * Doctor prescribes medications "consultation/medications/paracetamol,consultation/medications/Morphine,consultation/medications/Diazepam,consultation/medications/Ceftriaxone"
@@ -144,8 +142,6 @@ tags: cure
 * Open "Clinical" module
 * Goto All sections and search the newly created patient
 * Add Nutrional values
-* Open "Clinical" module
-* Goto All sections and search the newly created patient
 * Doctor clicks consultation
 * Doctor prescribes medications "consultation/medications/paracetamol,consultation/medications/Diazepam"
 * Goto patient clinical dashboard
