@@ -4,6 +4,7 @@ const taikoInteraction = require('./taikoInteraction');
 const asserTTimeOut=parseInt(process.env.asserTTimeOut)
 const actionTimeout=parseInt(process.env.actionTimeout)
 const logHelper = require('../bahmni-e2e-common-flows/tests/util/logHelper');
+const gaugeHelper = require('../bahmni-e2e-common-flows/tests/util/gaugeHelper');
 
 async function isPresent(element)
 {
@@ -52,10 +53,11 @@ async function waitToExists(element)
         await waitFor(async () => (
             isFound=await element.exists(200,asserTTimeOut)))
         if(!isFound)
-            logHelper.error(element ,' still not Exists');
+            logHelper.info(element ,' still not Exists');
         }
         catch(e)
         {
+            gaugeHelper.takeScreenshot()
             logHelper.info("got exception in wait to exists");
         }
 }
@@ -66,6 +68,7 @@ async function waitNotToExists(element)
     }
     catch(e)
     {
+        gaugeHelper.takeScreenshot()
         logHelper.info(element ,' still Exists');
     }
 }
@@ -78,6 +81,7 @@ async function waitToPresent(element)
     } while (!isFound)
     }
     catch(e){
+        gaugeHelper.takeScreenshot()
         logHelper.info(element ,' still not present');
     }
 }
@@ -91,6 +95,7 @@ async function waitToEnabled(element)
     } while (!isFound)
     }
     catch(e){
+        gaugeHelper.takeScreenshot()
         logHelper.info(element ,' still not present');
     }
 }
@@ -104,6 +109,7 @@ async function waitNotToPresent(element)
         } while (!isFound)
         }
         catch(e){
+            gaugeHelper.takeScreenshot()
             logHelper.info(element ,' still present');
         }
 }
@@ -116,7 +122,8 @@ async function elementDisabled(element)
     }
     catch(e)
     {
-        logHelper.info(element ,' is not disabled');
+        gaugeHelper.takeScreenshot()
+        logHelper.error(element ,' is not disabled');
     }
     return check
 }
@@ -130,7 +137,8 @@ async function elementEnabled(element)
     }
     catch(e)
     {
-        logHelper.info(element ,' is enabled');
+        gaugeHelper.takeScreenshot()
+        logHelper.error(element ,' is enabled');
     }
     return check
 }
@@ -143,7 +151,8 @@ async function getText(element)
     }
     catch(e)
     {
-        logHelper.info(element ,' text not found');
+        gaugeHelper.takeScreenshot()
+        logHelper.error(element ,' text not found');
     }
 }
 module.exports = {

@@ -2,6 +2,7 @@
 const assert = require('assert');
 const { title, text, textBox, toLeftOf, evaluate, waitFor } = require('taiko')
 const logHelper = require('../bahmni-e2e-common-flows/tests/util/logHelper');
+const gaugeHelper = require('../bahmni-e2e-common-flows/tests/util/gaugeHelper');
 var asserTTimeOut=parseInt(process.env.assertTimeOut)
 async function assertTitle(userTitle) {
     assert.ok((await title()).includes(userTitle));
@@ -14,7 +15,7 @@ async function assertTitle(userTitle) {
     if(!check)
     {
       logHelper.error(element,' is not exists');
-      console.log(element+' is not exists')
+      gaugeHelper.takeScreenshot()
       assert.fail(element+' is not exists')
     }
   }
@@ -24,7 +25,7 @@ async function assertTitle(userTitle) {
     if(check)
     {
       logHelper.error(element,' is exists');
-      console.log(element+' is exists')
+      gaugeHelper.takeScreenshot()
       assert.fail(element+' is  exists')
     }
   }
@@ -89,7 +90,15 @@ async function assertPageHasSetTimezone() {
 
  function assertArray(actual,expected)
   {
+    try{
     assert.ok(actual.includes(expected))
+    }
+    catch(error)
+    {
+    logHelper.error(`${expected} is not including ${actual}`);
+    gaugeHelper.takeScreenshot()
+    assert.fail(`${expected} is not including ${actual}`)
+    }
   }
 
 function assertArrayPresence(list,value)
@@ -98,18 +107,37 @@ function assertArrayPresence(list,value)
   if(!check)
   {
     logHelper.error(list,`${value} is not exists`);
+    gaugeHelper.takeScreenshot()
     assert.fail(value+' is not present in the list')
   }
 }
 
 function assertEquals(actual,expected )
 {
+  try
+  {
   assert.equal(actual,expected)
+  }
+  catch(error)
+  {
+    logHelper.error(error);
+    gaugeHelper.takeScreenshot()
+    assert.fail(`${actual} is not equal to ${expected}`)
+  }
 }
 
 function assertNotEmpty(text)
 {
+  try
+  {
   assert.notEqual(text,'')
+  }
+  catch(error)
+  {
+    logHelper.error(error);
+    gaugeHelper.takeScreenshot()
+    assert.fail(`${text} is empty`)
+  }
 }
 module.exports={
   assertTitle:assertTitle,
