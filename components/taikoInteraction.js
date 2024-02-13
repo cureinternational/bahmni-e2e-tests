@@ -54,6 +54,7 @@ catch(e)
 }
 async function EvaluateClick(element) {
   try{
+    await taikoElement.waitToExists(element)
     await evaluate(element, (el) => el.click())
     await taikoAssert.assertNotExists($(errorElement))
 
