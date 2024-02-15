@@ -11,7 +11,7 @@ async function assertTitle(userTitle) {
 
   async function assertExists(element) {
     waitFor(1000)
-    var check=await element.exists(1000,5000)
+    var check=await element.exists(1000,asserTTimeOut)
     if(!check)
     {
       logHelper.error(element,' is not exists');
@@ -21,7 +21,7 @@ async function assertTitle(userTitle) {
   }
 
   async function assertNotExists(element) {
-    var check=await element.exists(1000,5000)
+    var check=await element.exists(1000,asserTTimeOut)
     if(check)
     {
       logHelper.error(element,' is exists');
@@ -31,11 +31,11 @@ async function assertTitle(userTitle) {
   }
 
  async function assertTextExists(content) {
-    assert.ok(await text(content).exists(1000,5000));
+    assert.ok(await text(content).exists(1000,asserTTimeOut));
   }
 
  async function assertTextDoesNotExists(content) {
-    assert.ok(!(await text(content).exists(1000, 5000)));
+    assert.ok(!(await text(content).exists(1000, asserTTimeOut)));
   }
 
 async function assertPageHasSetTimezone() {
