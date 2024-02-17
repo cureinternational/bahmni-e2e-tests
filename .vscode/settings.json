@@ -4,7 +4,12 @@
         "*.cpt": "gauge"
     },
     "files.autoSave": "afterDelay",
+    "editor.fontSize": 16,
+    "editor.autoClosingBrackets":"always",
+    "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
     "files.autoSaveDelay": 500,
+    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.cursorStyle": "line",
     "workbench.editor.enablePreview": true,
     "terminal.integrated.enableImages": false
 }
