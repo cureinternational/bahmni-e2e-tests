@@ -41,7 +41,7 @@ tags: cure, regression
 
 ## A receptionist starts an opd visit and views the ipd dashboard
 
-tags: regression, cure
+tags: regression
 
 * Login to Bahmni as a "receptionist"
 * Receptionist creates the "pre" patient
@@ -93,3 +93,10 @@ tags: regression, cure
 * Click on home page
 * Logout and Login to Bahmni as a "receptionist"
 * visit is closed at the front desk
+
+## A Frontdesk clerk create a pre patient and schedule appointment
+
+tags: regression, cure
+
+* Login to Bahmni as a "receptionist"
+* Receptionist creates the "pre" patient
