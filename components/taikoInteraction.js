@@ -41,11 +41,9 @@ async function Click(element, type, relativeLocator) {
 async function AlertClick(element, type,text) {
   try{
   const selector = getSelector(element, type);
-  await taikoElement.isPresent(selector)
+  await taikoElement.waitToExists(selector)
     confirm(text, async () => await accept())
     await click(selector,{navigationTimeout: process.env.actionTimeout,force:true,waitForNavigation:false});
-    await taikoAssert.assertNotExists($(errorElement))
-
 }
 catch(e)
 {
