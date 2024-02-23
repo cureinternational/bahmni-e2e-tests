@@ -1,10 +1,10 @@
 # Lab Lite
 
-tags: ui
+tags: ui, lab-lite
 
 ## Doctor should be able to prescribe medicines and tests and get relevant reports from LabLite
 
-tags: clinic, lab-lite, smoke, regression, cure
+tags: clinic, smoke, regression, cure
 
 * Login to Bahmni location "CURE Ethiopia" as a "receptionist"
 * Receptionist creates the "cure" patient and starts an OPD
