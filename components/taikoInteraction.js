@@ -40,7 +40,7 @@ async function Click(element, type, relativeLocator) {
 
 async function AlertClick(element, type,text) {
   try{
-    await confirm(text, async () => await accept())
+    confirm(text, async () => await accept())
     await Click(element,type);
 }
 catch(e)
