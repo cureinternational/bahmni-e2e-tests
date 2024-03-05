@@ -10,9 +10,6 @@ tags: hospital, appointment, clinic, regression, cure
 * Receptionist creates the "cure" patient and starts an OPD
 * Receptionist creates a regular appointment "11am"
 * Receptionist creates a conflict regular appointment
-* Logout and Login to Bahmni as a "doctor"
-* The doctor joins the link for the appointment
-* Logout and Login to Bahmni as a "receptionist"
 * Receptionist cancels the newly created "regular" appointment
 * Receptionist cancels the newly created "regular" appointment
 * The patient's appointment should not be found
@@ -43,9 +40,6 @@ tags: hospital, appointment, clinic, regression, cure
 * Login to Bahmni as a "receptionist"
 * Receptionist creates the "cure" patient and starts an OPD
 * Receptionist creates a regular appointment "11am"
-* Logout and Login to Bahmni as a "doctor"
-* The doctor joins the link for the appointment
-* Logout and Login to Bahmni as a "receptionist"
 * Receptionist edits the newly created "regular" appointment to "10 am"
 * The patient's appointment should be edited to "10 am"
 * visit is closed at the front desk

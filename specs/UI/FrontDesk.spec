@@ -96,7 +96,7 @@ tags: regression, cure
 
 ## A Frontdesk clerk create a pre patient and schedule appointment
 
-tags: regression, cure
+tags: regression
 
 * Login to Bahmni as a "receptionist"
 * Receptionist creates the "pre" patient
