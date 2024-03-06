@@ -13,7 +13,9 @@ const {
     getCookies,
     emulateTimezone,
     currentURL,alert,accept,confirm
-  } =require('taiko')
+  } =require('taiko');
+const gaugeHelper = require('../bahmni-e2e-common-flows/tests/util/gaugeHelper');
+const logHelper = require('../bahmni-e2e-common-flows/tests/util/logHelper');
 const cwd = process.cwd();
 
 
@@ -21,7 +23,14 @@ async function navigateTo(url) {
   await goto(url,{ waitForNavigation: true});
 }
  async function switchTab(title) {
+    try
+    {
     await switchTo(title);
+    }
+    catch(err)
+    {
+      gaugeHelper.print(err,`No matching tabs found ${title}`)
+    }
   }
 
   async function reloadTab() {
