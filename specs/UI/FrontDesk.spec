@@ -27,7 +27,7 @@ tags: regression, cure
 
 ## A receptionist admits a patient and do search the patient in the inPatient module
 
-tags: regression,curefail
+tags: regression,cure
 
 * Login to Bahmni as a "nurse"
 * Receptionist creates the "cure" patient and starts an IPD
@@ -36,7 +36,6 @@ tags: regression,curefail
 * Admit the patient in "General Ward"
 * Open "InPatient" module
 * Verify the patient is present in "General Ward"
-* visit is closed at the front desk
 * Log out if still logged in
 
 ## A receptionist starts an opd visit and views the ipd dashboard
