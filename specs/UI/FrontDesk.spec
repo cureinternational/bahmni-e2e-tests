@@ -27,7 +27,7 @@ tags: regression, cure
 
 ## A receptionist admits a patient and do search the patient in the inPatient module
 
-tags: regression,curefail
+tags: regression,curefail,devtest
 
 * Login to Bahmni as a "nurse"
 * Receptionist creates the "cure" patient and starts an IPD

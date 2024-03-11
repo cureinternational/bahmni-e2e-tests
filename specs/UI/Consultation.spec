@@ -15,7 +15,7 @@ tags: cure
 
 ## Doctor should be able to see the patient in My Patient queue and speciality tab
 
-tags: curefail
+tags: curefail,devtest
 
 * Login to Bahmni as a "receptionist"
 * Receptionist creates the "cure" patient and starts an OPD
