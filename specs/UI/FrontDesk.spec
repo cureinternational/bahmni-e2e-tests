@@ -92,10 +92,3 @@ tags: regression, cure
 * Click on home page
 * Logout and Login to Bahmni as a "receptionist"
 * visit is closed at the front desk
-
-## A Frontdesk clerk create a pre patient and schedule appointment
-
-tags: regression
-
-* Login to Bahmni as a "receptionist"
-* Receptionist creates the "pre" patient
