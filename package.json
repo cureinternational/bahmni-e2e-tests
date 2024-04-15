@@ -2,10 +2,10 @@
   "name": "gauge-taiko-template",
   "description": "Starter template for writing JavaScript tests for Gauge",
   "scripts": {
-    "dev":"TAIKO_ENABLE_ACTION_OUTPUT=true DEBUG=true headless_chrome=false gauge run specs/UI --env ug/qa -v -p -n=3 --tags 'cure'",
+    "dev":"TAIKO_ENABLE_ACTION_OUTPUT=true DEBUG=true headless_chrome=false gauge run specs/UI --env ug/qa -v -p -n=3 --tags 'devtest'",
     "local": "gauge run specs --env local -v -p -n=2 --tags 'cure'",
     "et": "gauge run specs/UI --env et/qa -v -p -n=3  --tags 'cure'",
-    "ug": "gauge run specs/UI --env et/qa -v -p -n=3  --tags 'cure'",
+    "ug": "gauge run specs/UI --env ug/qa -v -p -n=3  --tags 'cure'",
     "failed": "gauge run --failed",
     "ci": "gauge run specs/UI --env cure/ci -v -p -n=3  --tags 'cure'"
   },

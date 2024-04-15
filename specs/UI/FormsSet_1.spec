@@ -4,7 +4,7 @@ tags: ui, consultation
 
 ## Doctor should be able to add Observation Form 1
 
-tags: forms, cure, form
+tags: forms, cure, form1
 
 * Login to Bahmni as a "receptionist"
 * Receptionist creates the "cure" patient and starts an OPD
@@ -12,16 +12,10 @@ tags: forms, cure, form
 * Open "Clinical" module
 * Goto All sections and search the newly created patient
 * Doctor clicks consultation
-* Enter Form Values and validate no error is displayed on save "consultation/observations/preAnaesthesiaAssessment"
-* Enter Form Values and validate no error is displayed on save "consultation/observations/paediatricAssessment"
-* Enter Form Values and validate no error is displayed on save "consultation/observations/patientProgressNotesOrders"
+* Enter Form Values and validate no error is displayed on save "formGroup1"
 * Goto patient clinical dashboard
-* Validate new obs "consultation/observations/preAnaesthesiaAssessment" on the patient clinical dashboard
-* Edit new obs "consultation/observations/preAnaesthesiaAssessment" on the patient clinical dashboard
-* Validate new obs "consultation/observations/paediatricAssessment" on the patient clinical dashboard
-* Edit new obs "consultation/observations/paediatricAssessment" on the patient clinical dashboard
-* Validate new obs "consultation/observations/patientProgressNotesOrders" on the patient clinical dashboard
-* Edit new obs "consultation/observations/patientProgressNotesOrders" on the patient clinical dashboard
+* Validate new obs "formGroup1" on the patient clinical dashboard
+* Edit new obs "formGroup1" on the patient clinical dashboard
 * Click on active patients list
 * Click on home page
 * Logout and Login to Bahmni as a "receptionist"
@@ -38,16 +32,10 @@ tags: forms, cure, form
 * Open "Clinical" module
 * Goto All sections and search the newly created patient
 * Doctor clicks consultation
-* Enter Form Values and validate no error is displayed on save "consultation/observations/Vitals"
-* Enter Form Values and validate no error is displayed on save "consultation/observations/rehabReferral"
-* Enter Form Values and validate no error is displayed on save "consultation/observations/rehabAssessment"
+* Enter Form Values and validate no error is displayed on save "formGroup2"
 * Goto patient clinical dashboard
-* Validate new obs "consultation/observations/Vitals" on the patient clinical dashboard
-* Edit new obs "consultation/observations/Vitals" on the patient clinical dashboard
-* Validate new obs "consultation/observations/rehabReferral" on the patient clinical dashboard
-* Edit new obs "consultation/observations/rehabReferral" on the patient clinical dashboard
-* Validate new obs "consultation/observations/rehabAssessment" on the patient clinical dashboard
-* Edit new obs "consultation/observations/rehabAssessment" on the patient clinical dashboard
+* Validate new obs "formGroup2" on the patient clinical dashboard
+* Edit new obs "formGroup2" on the patient clinical dashboard
 * Click on active patients list
 * Click on home page
 * Logout and Login to Bahmni as a "receptionist"
