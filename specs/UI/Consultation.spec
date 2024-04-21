@@ -134,7 +134,7 @@ tags: forms, cure, form
 
 ## Doctor should be able to add and edit IPD medications
 
-tags: cure
+tags: cure,devtest
 
 * Login to Bahmni as a "receptionist"
 * Receptionist creates the "cure" patient and starts an OPD
@@ -143,6 +143,7 @@ tags: cure
 * Goto All sections and search the newly created patient
 * Add Nutrional values
 * Doctor clicks consultation
+* Doctor notes the diagnosis and conditions "consultation/diagnosis/diagnosis_condition"
 * Doctor prescribes medications "consultation/medications/paracetamol,consultation/medications/Diazepam"
 * Goto patient clinical dashboard
 * Verify medical prescription in patient clinical dashboard
