@@ -78,6 +78,7 @@ tags: regression, cure
 * Goto All sections and search the newly created patient
 * Add Nutrional values
 * Doctor clicks consultation
+* Doctor notes the diagnosis and conditions "consultation/diagnosis/diagnosis_condition"
 * Doctor prescribes medications "consultation/medications/Diazepam"
 * Goto patient dashboard
 * Verify medical prescription in patient clinical dashboard
