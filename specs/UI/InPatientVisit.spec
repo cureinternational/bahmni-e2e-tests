@@ -2,6 +2,29 @@
 
 tags: ui
 
+## Nurse create nursing tasks and administering the medication
+
+tags: ipd
+
+* Login to Bahmni as a "receptionist"
+* Receptionist creates the "cure" patient and starts an IPD
+* Open "Clinical" app
+* Search and select patient
+* Admit the patient in "General Ward"
+* Logout and Login to Bahmni as a "doctor"
+* Open "Clinical" module
+* Goto All sections and search the newly created patient
+* Add Nutrional values
+* Doctor clicks consultation
+* Doctor notes the diagnosis and conditions "consultation/diagnosis/diagnosis_condition"
+* Doctor prescribes medications "consultation/medications/paracetamol"
+* Goto patient clinical dashboard
+* Goto to active visit
+* Nurse create medication tasks for "consultation/medications/paracetamol" 
+* Nurse administer medication for "consultation/medications/paracetamol"
+* Validate the medication task for "consultation/medications/paracetamol"
+
+
 ## Nurse should be able to admit and discharge a patient based on doctor's disposition
 
 tags: hospital, ipmodule, regression
