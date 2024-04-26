@@ -69,7 +69,7 @@ tags: regression, cure
 
 ## A nurse captures drug details for a patient
 
-tags: regression, cure,devtest
+tags: regression, cure
 
 * Login to Bahmni as a "receptionist"
 * Receptionist creates the "cure" patient and starts an OPD

@@ -62,7 +62,7 @@ tags: cure
 
 ## Doctor should be able to add and edit IPD medications
 
-tags: cure,devtest
+tags: cure
 
 * Login to Bahmni as a "receptionist"
 * Receptionist creates the "cure" patient and starts an OPD
