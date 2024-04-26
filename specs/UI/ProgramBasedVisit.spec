@@ -2,7 +2,7 @@
 
 tags: ui
 
-## Enrol a patient under a pre-patient-triage program
+## Verify the program Queue
 
 tags: cure, hospital, program, regression
 
