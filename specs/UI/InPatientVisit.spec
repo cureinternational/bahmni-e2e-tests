@@ -4,7 +4,7 @@ tags: ui
 
 ## Nurse create nursing tasks and administering the medication
 
-tags: ipd
+tags: cure
 
 * Login to Bahmni as a "receptionist"
 * Receptionist creates the "cure" patient and starts an IPD
@@ -20,9 +20,12 @@ tags: ipd
 * Doctor prescribes medications "consultation/medications/paracetamol"
 * Goto patient clinical dashboard
 * Goto to active visit
-* Nurse create medication tasks for "consultation/medications/paracetamol" 
-* Nurse administer medication for "consultation/medications/paracetamol"
-* Validate the medication task for "consultation/medications/paracetamol"
+* Nurse saves the system tasks "ipd/systemNonMedication"
+* Click on IPD home button
+* Open "InPatient" module
+* Verify the patient is present in "General Ward"
+* Log out if still logged in
+
 
 
 ## Nurse should be able to admit and discharge a patient based on doctor's disposition

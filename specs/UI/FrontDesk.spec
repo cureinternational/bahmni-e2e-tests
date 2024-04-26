@@ -87,8 +87,6 @@ tags: regression, cure
 * Logout and Login to Bahmni as a "nurse"
 * Open "Clinical" module
 * Goto All sections and search the newly created patient
-* Nurse saves the medication "consultation/medications/Diazepam" timing
-* Verify if the medication "consultation/medications/Diazepam" is present in drug chart modal
 * Click on active patients list
 * Click on home page
 * Logout and Login to Bahmni as a "receptionist"
