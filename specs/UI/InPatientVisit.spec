@@ -4,7 +4,7 @@ tags: ui
 
 ## Nurse create nursing tasks and administering the medication
 
-tags: cure
+tags: ipd
 
 * Login to Bahmni as a "receptionist"
 * Receptionist creates the "cure" patient and starts an IPD

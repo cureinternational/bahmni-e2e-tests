@@ -3,7 +3,7 @@
   "description": "Starter template for writing JavaScript tests for Gauge",
   "scripts": {
     "dev":"TAIKO_ENABLE_ACTION_OUTPUT=true DEBUG=true headless_chrome=false gauge run specs/UI --env ug/qa -v -p -n=3 --tags 'devtest'",
-    "et": "gauge run specs/UI --env et/qa -v -p -n=3  --tags 'cure'",
+    "et": "gauge run specs/UI --env et/qa -v -p -n=3  --tags 'cure || ipd'",
     "ug": "gauge run specs/UI --env ug/qa -v -p -n=3  --tags 'cure'",
     "zm": "gauge run specs/UI --env zm/qa -v -p -n=3  --tags 'cure'",
     "failed": "gauge run --failed",
