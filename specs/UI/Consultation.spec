@@ -87,7 +87,7 @@ tags: cure
 
 ## Doctor should be able add allergies for the patient
 
-tags: devtest
+tags: cure
 
 * Login to Bahmni as a "receptionist"
 * Receptionist creates the "cure" patient and starts an OPD
