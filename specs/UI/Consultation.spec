@@ -84,3 +84,20 @@ tags: cure
 * Logout and Login to Bahmni as a "receptionist"
 * visit is closed at the front desk
 * Log out if still logged in
+
+## Doctor should be able add allergies for the patient
+
+tags: devtest
+
+* Login to Bahmni as a "receptionist"
+* Receptionist creates the "cure" patient and starts an OPD
+* Logout and Login to Bahmni as a "doctor"
+* Open "Clinical" module
+* Goto All sections and search the newly created patient
+* Doctor adds allergies "consultation/allergies/allergyToPeanut"
+* Verify allergies "consultation/allergies/allergyToPeanut" in patient clinical dashboard
+* Click on active patients list
+* Click on home page
+* Logout and Login to Bahmni as a "receptionist"
+* visit is closed at the front desk
+* Log out if still logged in
